@@ -53,7 +53,7 @@ Crear una experiencia de compra online intuitiva y atractiva para productos de m
 ## 🚀 Instalación Local
 ```bash
 # Clonar repositorio
-git clone https://github.com/tu-usuario/ecommerce-ropa.git
+git clone https://github.com/LFDIAZDEV2209/eCommerce-Clothes-WEB.git
 
 # Abrir en navegador (no se requieren dependencias)
 open index.html
