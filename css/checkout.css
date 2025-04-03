@@ -14,7 +14,6 @@ body {
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
-  background-image: repeating-linear-gradient(to right, transparent, transparent 20px, rgba(200, 210, 255, 0.1) 20px, rgba(200, 210, 255, 0.1) 40px);
 }
 
 .navbar-container input[type="checkbox"] {
@@ -208,8 +207,8 @@ body {
   height: 70px;
   border-radius: var(--small-radius);
   background-color: var(--light-gray);
-  background-size: 3.7em;
-  background-position: top;
+  background-size: 6em;
+  background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
 }
@@ -407,7 +406,7 @@ body {
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   padding: 20px;
   background-color: var(--secondary-color);
@@ -426,7 +425,208 @@ body {
   box-shadow: var(--shadow);
 }
 
-/* Media Query for iPhone X */
+@media (min-width: 768px) {
+  /* Layout General */
+  body {
+    padding: 0 5%;
+  }
+
+  /* Header */
+  .header {
+    justify-content: space-between;
+    padding: 30px 0;
+    max-width: 1200px;
+    margin: 0 80px 20px;
+    background-color: transparent;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  /* Main Content */
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 100px;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+  }
+
+  /* Cart Products Section */
+  .cart-products {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .products {
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+  
+  .products:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  }
+
+  .product-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .product-details h2 {
+    font-size: 18px;
+  }
+
+  .product-details h5 {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+
+  .product-setting {
+    margin-left: auto;
+  }
+
+  /* Right Column Container */
+  .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Payment Method Section */
+  .method-payment {
+    margin-top: 0;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+
+  .method-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .method-choose {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--light-gray);
+  }
+  
+  .method-choose:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  /* Total Amount Section */
+  .total-amount {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-top: 0;
+  }
+
+  .summary-item {
+    margin-bottom: 15px;
+  }
+
+  .label, .amount {
+    font-size: 16px;
+  }
+
+  .total-amount hr {
+    margin: 15px 0;
+  }
+
+  .total-amount .summary-item:last-child .label,
+  .total-amount .summary-item:last-child .amount {
+    font-size: 18px;
+  }
+
+  /* Footer */
+  .footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 30px;
+  }
+  
+  .pay {
+    max-width: 300px;
+    height: 60px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+  }
+  
+  .pay:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Wrap the right column items */
+  .main-content {
+    grid-template-columns: 1fr 400px;
+  }
+
+  /* Product details */
+  .product-details {
+    padding-right: 20px;
+  }
+
+  /* Larger product images */
+  .product-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* Main Content */
+  .main-content {
+    grid-template-columns: 1fr 450px;
+  }
+  
+  /* Cart Products Section */
+  .product-img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .product-details h2 {
+    font-size: 20px;
+  }
+  
+  .price {
+    font-size: 20px;
+  }
+
+  /* Payment and Total sections */
+  .method-title {
+    font-size: 22px;
+  }
+
+  .total-amount .summary-item:last-child .label,
+  .total-amount .summary-item:last-child .amount {
+    font-size: 20px;
+  }
+  
+  .footer{
+    right: -300px;
+  }
+}
 @media screen and (min-width: 375px) and (max-height: 812px) {
   .menu-items {
     width: 85%;
