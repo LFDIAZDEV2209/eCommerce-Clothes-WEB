@@ -484,6 +484,7 @@
       align-items: center;
       max-width: 1400px;
       margin: 0 auto;
+      width: 100%;
     }
     
     .name{
@@ -522,12 +523,13 @@
     }
     
     .nav-bar {
+      display: flex;
       grid-area: nav;
       margin-bottom: 30px;
     }
     
     .categories {
-      justify-content: flex-start;
+      margin-left: 430px;
       gap: 20px;
     }
     
@@ -589,7 +591,7 @@
     .product-name,
     .product-categorie,
     .product-price {
-        text-align: left; /* Centra el texto */
+        text-align: left; 
     }
     
     /* Footer */
@@ -601,6 +603,7 @@
       width: auto;
       max-width: 400px;
       border-radius: 50px;
+      width: 100%;
     }
     
     .nav-menu {
