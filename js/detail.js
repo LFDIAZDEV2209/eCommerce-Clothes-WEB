@@ -16,6 +16,7 @@ const loadPolyfill = () => {
     const dialog = document.querySelector('dialog');
     const openDialogBtn = document.getElementById('open_dialog');
     const closeDialogBtn = document.getElementById('close_dialog');
+    const confirmDialogBtn = document.getElementById('confirm_dialog');
     
     // Verificamos si necesitamos el polyfill
     const dialogPolyfill = await loadPolyfill();
@@ -74,6 +75,7 @@ const loadPolyfill = () => {
     // Event listeners
     openDialogBtn.addEventListener('click', openDialog);
     closeDialogBtn.addEventListener('click', closeDialog);
+    confirmDialogBtn.addEventListener('click', closeDialog);
   
     // Cerrar al hacer clic fuera del diálogo
     dialog.addEventListener('click', (e) => {

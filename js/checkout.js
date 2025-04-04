@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Cerrar menú al hacer clic fuera
     document.addEventListener('click', function(e) {
-        if (!navbar.contains(e.target) && e.target !== navBtn) {
+        if (!navbar.contains(e.target) && !navBtn.contains(e.target)) {
             navBtn.classList.remove('active');
             navbar.classList.remove('active');
             document.body.style.overflow = '';

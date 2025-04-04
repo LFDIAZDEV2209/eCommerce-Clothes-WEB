@@ -128,6 +128,7 @@
     list-style: none;
     border-radius: 0,25rem;
     padding: 1rem 0.75rem;
+    cursor: pointer;
 }
 
 .results ul li:hover {
@@ -146,12 +147,18 @@
     justify-content: center;
     cursor: pointer;
     box-shadow: var(--shadow);
+    transition: all 0.2s ease;
   }
   
   .filter-button::after {
     content: url(../storage/font/img/filter-icon.svg);
     font-size: 18px;
     color: var(--white);
+  }
+
+  .filter-button:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   }
   
   /* Navigation Categories */
@@ -185,9 +192,11 @@
     cursor: pointer;
   }
   
-  .categorie-item:first-child {
+  .categorie-item:active {
     background-color: var(--primary-color);
     color: var(--white);
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
   }
   
   /* Category Icons */
@@ -209,6 +218,10 @@
   .categorie-item:nth-child(4)::before {
     content: url(../storage/font/img/pants.svg);
     font-size: 1px;
+  }
+
+  .categorie-item:active::before{
+    filter: invert(1);
   }
   
   /* Main Content */
@@ -245,16 +258,6 @@
 
   .products-container a{
     text-decoration: none;
-  }
-  
-  /* Product Image and Details */
-  .product-card:hover::before {
-    content: "♥";
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: var(--accent-color);
   }
   
 .product-card:nth-child(1) {
@@ -302,19 +305,28 @@
   
   /* Like Button */
   .product-card::before {
-    content: "♡";
+    content: url(../storage/font/img/Favourite.svg);
     position: absolute;
     top: 10px;
     right: 10px;
     width: 30px;
     height: 30px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 1px;
     color: var(--dark-gray);
+    transition: all 0.2s ease; 
+    z-index: 100
+  }
+
+  .product-card:active::before {
+    background-color: var(--white); 
+    transform: scale(1.1); 
+    filter: invert(1); 
+    transition: all 0.2s ease; 
   }
   
   /* Star Rating */
@@ -358,6 +370,12 @@
     cursor: pointer;
   }
   
+  .menu-item:active {
+    background-color: var(--white);
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+
   /* Menu Icons */
   .menu-item:nth-child(1)::before {
     content: url(../storage/font/img/Home.svg);
@@ -377,6 +395,10 @@
   .menu-item:nth-child(4)::before {
     content: url(../storage/font/img/Account.svg);
     font-size: 24px;
+  }
+
+  .menu-item:active::before{
+    filter: invert(1);
   }
   
   /* iPhone Home Indicator */

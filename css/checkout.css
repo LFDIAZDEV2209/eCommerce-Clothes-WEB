@@ -27,7 +27,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -250,6 +250,18 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.product-setting button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-setting button:active {
+  background-color: #000000;
+  transform: scale(0.95);
+  filter: invert(1);
 }
 
 .setting {
@@ -404,8 +416,8 @@ body {
 
 /* Footer */
 .footer {
-  position: fixed;
-  bottom: 0;
+  position: relative;
+  bottom: 20px;
   right: 0;
   width: 100%;
   padding: 20px;
@@ -423,6 +435,20 @@ body {
   font-weight: 500;
   cursor: pointer;
   box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.pay:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.pay:active {
+  background-color: var(--white);
+  color: var(--primary-color);
+  transform: translateY(0);
+  box-shadow: none;
+  border: 2px solid var(--primary-color);
 }
 
 @media (min-width: 768px) {
@@ -452,6 +478,9 @@ body {
     display: grid;
     grid-template-columns: 1fr 350px;
     gap: 30px;
+    grid-template-areas:
+    "content method"
+    "summary pay";
   }
 
   /* Cart Products Section */
@@ -459,6 +488,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    grid-area: content;
   }
 
   .products {
@@ -496,13 +526,6 @@ body {
     margin-left: auto;
   }
 
-  /* Right Column Container */
-  .right-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
   /* Payment Method Section */
   .method-payment {
     margin-top: 0;
@@ -510,6 +533,7 @@ body {
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    grid-area: method;
   }
 
   .method-title {
@@ -535,6 +559,7 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     margin-top: 0;
+    grid-area: summary;
   }
 
   .summary-item {
@@ -556,9 +581,14 @@ body {
 
   /* Footer */
   .footer {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 auto; 
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
     padding: 0 0 30px;
+    grid-area: pay;
   }
   
   .pay {
@@ -567,14 +597,7 @@ body {
     font-size: 18px;
     transition: all 0.3s ease;
   }
-  
-  .pay:hover {
-    background-color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
-}
-
+}  
 @media (min-width: 1024px) {
   /* Wrap the right column items */
   .main-content {
@@ -621,10 +644,6 @@ body {
   .total-amount .summary-item:last-child .label,
   .total-amount .summary-item:last-child .amount {
     font-size: 20px;
-  }
-  
-  .footer{
-    right: -300px;
   }
 }
 @media screen and (min-width: 375px) and (max-height: 812px) {
