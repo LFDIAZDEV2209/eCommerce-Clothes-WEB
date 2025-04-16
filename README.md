@@ -6,6 +6,9 @@
 
 Plataforma de comercio electrónico especializada en moda, con diseño responsivo y experiencia de usuario optimizada.
 
+## 🔗 Link
+
+[![Netlify](https://img.shields.io/badge/Netlify-Deployed-2ECC71?style=for-the-badge&logo=netlify&logoColor=white)](https://app.netlify.com/sites/ecommerce-clothes-web/deploys)
 ## 🎯 Objetivo
 Crear una experiencia de compra online intuitiva y atractiva para productos de moda, resolviendo los problemas comunes de usabilidad en sitios similares.
 
